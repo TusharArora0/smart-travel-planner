@@ -1,0 +1,86 @@
+.planner-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1.5rem;
+}
+
+.planner-form-container {
+  grid-column: 1 / -1;
+}
+
+.planner-widgets {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  grid-column: 1 / -1;
+  min-height: 800px;
+}
+
+.widget-amadeus {
+  margin-top: 20px;
+  grid-column: 1 / -1;
+}
+
+.widget-map {
+  height: 100%;
+  min-height: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.widget-weather {
+  height: 100%;
+  min-height: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Responsive layout */
+@media (min-width: 992px) {
+  .planner-layout {
+    grid-template-columns: 2fr 3fr;
+  }
+  
+  .planner-form-container {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    padding-right: 1rem;
+  }
+  
+  .planner-widgets {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .planner-widgets {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  
+  .widget-map,
+  .widget-weather {
+    min-height: 350px;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .planner-layout {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+}

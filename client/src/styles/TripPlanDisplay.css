@@ -1,0 +1,540 @@
+.trip-plan-display {
+  position: relative;
+  min-height: 100%;
+  padding: 2rem;
+  color: #333;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.trip-plan-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.trip-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.trip-summary {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.recommendations-section {
+  margin-bottom: 2rem;
+}
+
+.recommendations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.recommendation-card {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.day-card {
+  background: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.day-header {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.day-content {
+  padding: 1.5rem;
+}
+
+.activities-section {
+  margin-bottom: 2rem;
+}
+
+.activity-card {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.activity-time {
+  font-weight: bold;
+  color: #666;
+  min-width: 80px;
+}
+
+.logistics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.accommodation-content,
+.meal-content,
+.activity-content {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.accommodation-details,
+.meal-details,
+.activity-details {
+  flex: 1;
+}
+
+.accommodation-image-container,
+.restaurant-image-container,
+.activity-image-container {
+  width: 150px;
+  height: 150px;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.accommodation-image,
+.restaurant-image,
+.activity-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.accommodation-image:hover,
+.restaurant-image:hover,
+.activity-image:hover {
+  transform: scale(1.05);
+}
+
+.view-more-link {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  text-align: center;
+  padding: 5px;
+  font-size: 0.8rem;
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.accommodation-image-container:hover .accommodation-buttons,
+.restaurant-image-container:hover .restaurant-buttons,
+.activity-image-container:hover .activity-buttons {
+  opacity: 1;
+}
+
+.accommodation-details-overlay,
+.restaurant-details-overlay,
+.activity-details-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 8px;
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.accommodation-buttons,
+.restaurant-buttons,
+.activity-buttons {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.view-more-link,
+.booking-link {
+  color: white;
+  text-align: center;
+  padding: 5px;
+  font-size: 0.8rem;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.view-more-link {
+  background-color: #2196f3;
+}
+
+.booking-link {
+  background-color: #4CAF50;
+}
+
+.view-more-link:hover {
+  background-color: #1976d2;
+}
+
+.booking-link:hover {
+  background-color: #45a049;
+}
+
+/* Amadeus integration styles */
+.amadeus-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #0078d2;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.widget-amadeus {
+  grid-column: 1 / -1;
+  margin-top: 20px;
+}
+
+.accommodation-card,
+.meals-card,
+.transport-card {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.meal-item {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.meal-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.daily-total {
+  text-align: right;
+  font-weight: bold;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.hotel-card {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: var(--card-bg-secondary);
+}
+
+.hotel-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.weather-forecast {
+  margin: 1rem 0;
+}
+
+.weather-cards {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 1rem 0;
+}
+
+.weather-card {
+  flex: 0 0 auto;
+  padding: 1rem;
+  text-align: center;
+  background-color: var(--card-bg-secondary);
+  border-radius: 8px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.action-buttons button {
+  flex: 1;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+@media print {
+  .action-buttons {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .trip-plan-display {
+    padding: 1rem;
+  }
+
+  .logistics-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.link-with-icon {
+  color: #2196f3;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.link-with-icon:hover {
+  color: #1976d2;
+  text-decoration: underline;
+}
+
+.link-icon {
+  font-size: 0.8em;
+  margin-left: 4px;
+}
+
+.activity-images,
+.hotel-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.activity-images img,
+.hotel-images img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.activity-images img:hover,
+.hotel-images img:hover {
+  transform: scale(1.05);
+}
+
+.amenities {
+  margin: 1rem 0;
+}
+
+.amenities ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.amenities li {
+  background: #f5f5f5;
+  padding: 0.25rem 0.75rem;
+  border-radius: 16px;
+  font-size: 0.9em;
+}
+
+.booking-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.booking-button:hover {
+  background-color: #45a049;
+}
+
+.location {
+  color: #666;
+  margin: 0.5rem 0;
+}
+
+.meal-item {
+  position: relative;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.trip-plan {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.cost-summary {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.total-cost {
+  font-size: 1.5em;
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+.recommendations {
+  margin: 20px 0;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.recommendations-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.day-plan {
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+}
+
+.day-header {
+  background: #f8f9fa;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.activity-card, .accommodation-card, .meal-card, .transport-card {
+  background: #fff;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.activity-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.activity-time {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.activity-duration {
+  color: #6c757d;
+}
+
+.meals-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.cost {
+  color: #2c3e50;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.daily-total {
+  margin-top: 20px;
+  padding: 10px;
+  background: #e9ecef;
+  border-radius: 4px;
+  text-align: right;
+  font-weight: bold;
+}
+
+h3, h4, h5, h6 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li {
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+}
+
+li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #6c757d;
+}
+
+@media (max-width: 768px) {
+  .recommendations-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .meals-container {
+    grid-template-columns: 1fr;
+  }
+}

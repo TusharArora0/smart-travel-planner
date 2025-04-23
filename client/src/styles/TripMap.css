@@ -1,0 +1,80 @@
+.trip-map-container {
+  padding: 1.5rem;
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  margin: 0;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  min-height: 600px;
+  position: relative;
+  z-index: 1;
+}
+
+.trip-map-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
+.trip-map-container h2 {
+  margin-bottom: 1rem;
+  color: var(--text-color);
+  text-align: center;
+  font-size: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.trip-map-container h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-color), transparent);
+  border-radius: 3px;
+}
+
+.leaflet-container {
+  width: 100%;
+  height: 75vh;
+  border-radius: 8px;
+  z-index: 1;
+}
+
+.map-loading {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.info-window-content {
+  padding: 8px;
+  max-width: 250px;
+}
+
+.info-window-content h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: #333;
+  font-size: 16px;
+}
+
+.info-window-content p {
+  margin: 6px 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .trip-map-container h2 {
+    font-size: 1.3rem;
+  }
+}
